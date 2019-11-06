@@ -9,8 +9,8 @@
 </head>
 <body>
 	<h1>Member Login Page</h1>
-	<form action="">
-		
+	<form action="memberLogin" method="post">
+		<button>Login</button>
 	</form>
 </body>
 </html>
