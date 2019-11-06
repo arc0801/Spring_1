@@ -6,14 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:import url="../layout/bootStrap.jsp" />
 </head>
 <body>
-<c:import url="../layout/nav.jsp" />
-	<h1>Notice List Page</h1>
-	<img alt="" src="../resources/images/4.jpg">
-	<a href="./noticeSelect?n=33">Select One</a>
-	<a href="./noticeWrite">Notice Write</a>
-	<h1>${list}</h1>
+	<h1>Member Join Page</h1>
+	<form action="">
+		<button>Join</button>
+	</form>
 </body>
 </html>

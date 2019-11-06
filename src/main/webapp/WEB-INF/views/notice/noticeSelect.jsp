@@ -11,5 +11,6 @@
 <body>
 <c:import url="../layout/nav.jsp" />
 	<h1>Notice Select Page</h1>
+	<h1>${data}</h1>
 </body>
 </html>
