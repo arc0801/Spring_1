@@ -7,16 +7,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<c:import url="./layout/nav.jsp" />
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-<img alt="" src="./resources/images/4.jpg">
-<a href="./test">Go Test</a>
-<a href="./notice/noticeList">Notice List</a>
-<a href="./member/memberJoin" class="btn btn-info">Join</a>
-<a href="./member/memberLogin" class="btn btn-info">Login</a>
+	<c:import url="./layout/nav.jsp" />
+	<h1>
+		Hello world!  
+	</h1>
+	
+	<P>  The time on the server is ${serverTime}. </P>
+	<img alt="" src="./resources/images/4.jpg">
+	<a href="./test">Go Test</a>
+	<a href="./notice/noticeList">Notice List</a>
+	<a href="./member/memberJoin" class="btn btn-info">Join</a>
+	<a href="./member/memberLogin" class="btn btn-info">Login</a>
 </body>
 </html>

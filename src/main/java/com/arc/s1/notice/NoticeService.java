@@ -7,12 +7,10 @@ public class NoticeService {
 	
 	private NoticeDAO noticeDAO;
 	
-	public NoticeService() {
-		//리턴 타입 아예 없는 게 생성자 Constructor
-		this.noticeDAO = new NoticeDAO();
-		//this는 생략
+	public void setNoticeDAO(NoticeDAO noticeDAO) {
+		this.noticeDAO = noticeDAO;
 	}
-	
+
 	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception {
 		int result = noticeDAO.noticeUpdate(noticeDTO);
 		return result;

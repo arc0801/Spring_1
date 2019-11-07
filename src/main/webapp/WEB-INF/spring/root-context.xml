@@ -4,5 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean class="com.arc.s1.notice.NoticeDAO" id="noticeDAO"></bean>
 		
+	<bean class="com.arc.s1.notice.NoticeService" id="noticeService">
+		<property name="noticeDAO" ref="noticeDAO"></property>
+	</bean>
 </beans>
