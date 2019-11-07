@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import com.arc.util.DBConnector;
 
+@Scope("prototype")
 @Repository
 @Qualifier("n1") //noticeDAO 객체가 여러 개일 때 이름을 주자
 public class NoticeDAO {
