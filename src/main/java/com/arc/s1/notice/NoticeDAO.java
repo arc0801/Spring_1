@@ -6,8 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
 import com.arc.util.DBConnector;
 
+@Repository
+@Qualifier("n1") //noticeDAO 객체가 여러 개일 때 이름을 주자
 public class NoticeDAO {
 	
 	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception {
