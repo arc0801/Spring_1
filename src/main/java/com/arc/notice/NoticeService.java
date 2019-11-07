@@ -1,18 +1,18 @@
-package com.arc.s1.notice;
+package com.arc.notice;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+@Service
 public class NoticeService {
 	//DAO 객체 없으면 Service 운용 못 해
 	
+	@Inject
 	private NoticeDAO noticeDAO;
-	
-	public NoticeService() {
-		//리턴 타입 아예 없는 게 생성자 Constructor
-		this.noticeDAO = new NoticeDAO();
-		//this는 생략
-	}
-	
+		
 	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception {
 		int result = noticeDAO.noticeUpdate(noticeDTO);
 		return result;

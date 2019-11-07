@@ -1,4 +1,4 @@
-package com.arc.s1.notice;
+package com.arc.notice;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,14 +6,21 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.arc.util.DBConnector;
+import javax.inject.Inject;
+import javax.sql.DataSource;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class NoticeDAO {
+	
+	@Inject
+	private DataSource dataSource;
 	
 	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception {
 		int result = 0;
 		
-		Connection con = DBConnector.getConnect();
+		Connection con = dataSource.getConnection();
 		String sql = "update notice set title=?, writer=?, contents=? where num=?";
 		
 		PreparedStatement st = con.prepareStatement(sql);
@@ -33,7 +40,7 @@ public class NoticeDAO {
 	public int noticeWrite(NoticeDTO noticeDTO) throws Exception {
 		int result = 0;
 		
-		Connection con = DBConnector.getConnect();
+		Connection con = dataSource.getConnection();
 		String sql = "insert into notice values(board_seq.nextval, ?, ?, ?, sysdate, 0)";
 		
 		PreparedStatement st = con.prepareStatement(sql);
@@ -52,7 +59,7 @@ public class NoticeDAO {
 	public NoticeDTO noticeSelect(int num) throws Exception {
 		NoticeDTO noticeDTO = null;
 		
-		Connection con = DBConnector.getConnect();
+		Connection con = dataSource.getConnection();
 		String sql = "select * from notice where num=?";
 		
 		PreparedStatement st = con.prepareStatement(sql);
@@ -78,7 +85,7 @@ public class NoticeDAO {
 	public List<NoticeDTO> noticeList() throws Exception {
 		ArrayList<NoticeDTO> ar = new ArrayList<NoticeDTO>();
 		
-		Connection con = DBConnector.getConnect();
+		Connection con = dataSource.getConnection();
 		String sql = "select * from notice order by num desc";
 		PreparedStatement st = con.prepareStatement(sql);
 		ResultSet rs = st.executeQuery();

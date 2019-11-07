@@ -2,6 +2,7 @@ package com.arc.s1;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,19 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.arc.s1.notice.NoticeDTO;
-import com.arc.s1.notice.NoticeService;
+import com.arc.notice.NoticeDTO;
+import com.arc.notice.NoticeService;
 
 @Controller
 @RequestMapping("/notice/**")
 // *한 개면 바로 하위까지만, **두 개면 sub 파일도 포함
 public class NoticeController {
 	
+	@Inject
 	private NoticeService noticeService;
-	
-	public NoticeController() {
-		noticeService = new NoticeService();
-	}
 	
 	@RequestMapping(value = "noticeDelete")
 	public void noticeDelete() throws Exception {
