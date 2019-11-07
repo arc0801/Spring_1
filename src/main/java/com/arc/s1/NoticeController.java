@@ -81,8 +81,8 @@ public class NoticeController {
 	}
 	
 	//noticeWrite GET
-	@RequestMapping(value = "noticeWrite", method = RequestMethod.GET) //절대주소로 써야해!! '/'는 루트주소야.
-	public void noticeWrite() {
+	@RequestMapping(value = "noticeWrite", method = RequestMethod.GET, params = {"num=1, name=iu, age"}) //절대주소로 써야해!! '/'는 루트주소야.
+	public void noticeWrite() { //params = {"num=1, name=iu, age"} : 파라미터 num=1, name=iu 값이 꼭 넘어와야하고 age는 없어야 함을 의미.
 		
 	}
 	
